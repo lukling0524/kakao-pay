@@ -1,0 +1,273 @@
+@import "variables";
+
+/*
+====================
+====   header  =====
+====================
+*/
+.header{
+    width: 100%;
+    height: $header-height;
+    @include position(fixed, 0, auto);
+    background-color: #ffffff;
+    overflow: hidden;
+    z-index: 100;
+    transition: height 0.4s;
+
+    &:hover{
+        height: $header-open-height;
+    }
+    &__wrap{
+        max-width: 1200px;
+        height: $header-height;
+        margin: auto;
+        @include flex;
+    }
+    &__logo{
+        height: $header-height;
+        padding-left: 20px;
+    }
+    .logo{
+        @include item_center;
+
+        &__link{
+            display: block;
+            @include img_sprite(73px, 23px, 0, 0);
+            background-size:  300px auto;
+        }
+    }
+    .gnb{
+        height: 30px;
+        @include flex;
+        @include item_center;
+
+        &__list{
+            position: relative;
+            padding: 0 35px 0 62px;
+
+            &--title{
+                font-size: 18px;
+                font-weight: 700;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 5px;
+                    margin-top: 18px;
+                    background-color: $btn-and-underbar-color;
+                    transition: width 0.3s;
+                }
+            }
+            &:hover .gnb__list--title::after{
+                width: 100%;
+            }
+        }
+        &__sub{
+            @include position(absolute, 0, 0);
+            padding-top: 80px;
+
+            &--link{
+                display: block;
+                padding: 7px 35px 7px 62px;
+                color: #555555;
+                white-space: nowrap;
+                transition: color 0.3s;
+    
+                &:hover{
+                    color: #000000;
+                    font-weight: 500;
+                }
+            }
+            &--authcenter{
+                position: relative;
+                margin-top: 42px;
+                font-size: 14px;
+                letter-spacing: -1.5px;
+                color: #999999;
+
+                &:hover{
+                    color: #999999;
+                    font-weight: inherit;
+                    text-decoration: underline;
+                }
+
+                .mini-arrow{
+                    display: block;
+                    @include img_sprite(8px, 8px, -170px, -75px);
+                    background-size: 300px auto;
+                    float: right;
+                    position: absolute;
+                    top: 50%;
+                    right: 35px;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    .burger{
+        position: absolute;
+        right: 20px;
+        margin-top: 7px;
+
+        &__inner{
+            position: relative;
+            width: 60px;
+            height: 60px;
+        }
+        &__box{
+            @include position(absolute, 50%, 50%);
+            transform: translate(-50%, -50%);
+        }
+        &__line{
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: #000000;
+            margin-bottom: 6px;
+
+            &--top{}
+            &--bottom{}
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+    .header{
+        // width: 100%;
+        // height: $header-height;
+        // @include position(fixed, 0, auto);
+        // background-color: #ffffff;
+        // overflow: hidden;
+        // z-index: 100;
+        // transition: height 0.4s;
+        
+        &:hover{
+            // height: $header-open-height;
+            // height: 100%;
+            height: $header-height;
+        }
+        &.active{
+            height: 100%;
+            overflow: auto;
+
+            .header__logo{
+                display: none;
+            }
+        }
+        &__wrap{
+            // max-width: 1200px;
+            // height: $header-height;
+            // margin: auto;
+            // @include flex;
+            flex-direction: column;
+            position: relative;
+        }
+        &__logo{
+            // height: $header-height;
+            // padding-left: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .logo{
+            // @include item_center;
+    
+            &__link{
+                // display: block;
+                // @include img_sprite(73px, 23px, 0, 0);
+                // background-size:  300px auto;
+                @include img_sprite(60px, 20px, 0, -25px);
+                background-size:  100px auto;
+            }
+        }
+        .gnb{
+            // height: 30px;
+            // @include flex;
+            // @include item_center;
+            flex-direction: column;
+            height: 100%;
+            margin: 74px 0 30px;
+    
+            &__list{
+                // position: relative;
+                // padding: 0 35px 0 62px;
+    
+                &--title{
+                    // font-size: 18px;
+                    // font-weight: 700;
+                    font-size: 22px;
+    
+                    &::after{
+                        // content: '';
+                        // display: block;
+                        // width: 0;
+                        // height: 5px;
+                        // margin-top: 18px;
+                        // background-color: $btn-and-underbar-color;
+                        // transition: width 0.3s;
+                        display: none;
+                    }
+                }
+                &:hover .gnb__list--title::after{
+                    // width: 100%;
+                }
+            }
+            &__sub{
+                // @include position(absolute, 0, 0);
+                // padding-top: 80px;
+                    @include position(relative, 0, 0);
+                    padding-top: 12px;
+                &--link{
+                    // display: block;
+                    // padding: 7px 35px 7px 62px;
+                    // color: #555555;
+                    // white-space: nowrap;
+                    // transition: color 0.3s;
+                    padding: 4px 6px;
+                    font-size: 18px;
+        
+                    &:hover{
+                        // color: #000000;
+                        // font-weight: 500;
+                    }
+                }
+                &--authcenter{
+                    // position: relative;
+                    // margin-top: 42px;
+                    // font-size: 14px;
+                    // letter-spacing: -1.5px;
+                    // color: #999999;
+                    display: none;
+    
+                    &:hover{
+                        // color: #999999;
+                        // font-weight: inherit;
+                        // text-decoration: underline;
+                    }
+    
+                    .mini-arrow{
+                        // display: block;
+                        // @include img_sprite(8px, 8px, -170px, -75px);
+                        // background-size: 300px auto;
+                        // float: right;
+                        // position: absolute;
+                        // top: 50%;
+                        // right: 35px;
+                        // transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
+}

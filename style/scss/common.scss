@@ -1,0 +1,16 @@
+@import "variables";
+@import "header";
+@import "footer";
+
+/* pc버전 이미지 스프라이트 */
+.sprite-pc{
+    background: url(../../images/pc/sp-icon.png) no-repeat;
+}
+.sprite-mob{
+    background: url(../../images/mobile/sp-icon.png) no-repeat;
+}
+
+/* header 높이 만큼 margin top 설정 */
+.main{
+    margin-top: $header-height;
+}

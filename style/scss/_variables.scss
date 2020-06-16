@@ -1,0 +1,61 @@
+// ====================
+// ====   color   =====
+// ====================
+
+$main-bg-color: #FFEB00;
+$btn-and-underbar-color: #FFDF05;
+$btn-hover-color: #020202;
+
+
+// ====================
+// ===  size unit   ===
+// ====================
+
+$header-height: 74px;
+$header-open-height: 330px;
+$footer-text-vertical-align: 30px;
+
+// ====================
+// ====   mixin   =====
+// ====================
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+}
+@mixin item_center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin position($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin img_sprite($width, $height, $posX, $posY){
+    width: $width;
+    height: $height;
+    background-position: $posX $posY;
+}
+
+@mixin link_btn ($topbottom, $leftright, $btnlineheight, $fontcolor, $bgcolor){
+    display: block;
+    padding: $topbottom $leftright;
+    line-height: $btnlineheight;
+    color: $fontcolor;
+    background-color: $bgcolor;
+}
+@mixin link_btn_hover ($fontcolor, $bgcolor){
+    color: $fontcolor;
+    background-color: $bgcolor;
+}    
+
+
+
+
+
+
+
